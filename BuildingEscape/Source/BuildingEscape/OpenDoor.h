@@ -37,10 +37,10 @@ private:
 	UPROPERTY(EditAnywhere)
 	ATriggerVolume* PressurePlate;
 
-	AActor* ActorThatOpens; // Remember pawn inherits from actor
-
 	UPROPERTY(EditAnywhere)
 	float DoorCloseDelay = 1.0f;
 
 	float LastDoorOpenTime;
+
+	float GetTotalMassOfActorsOnPlate();
 };

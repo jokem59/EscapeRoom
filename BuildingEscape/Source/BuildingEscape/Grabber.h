@@ -45,5 +45,5 @@ private:
 
 	// Return hit for first physics body hit
 	FHitResult GetFirstPhysicsBodyInReach();
-	
+
 };
