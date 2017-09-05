@@ -39,8 +39,11 @@ private:
 	void FindPhysicsHandleComponent();
 	// Setup (assumed) attached input component
 	void SetupInputComponent();
+	// Find the end of ray-trace
+	FVector GetReachLineEnd();
+	FVector GetReachLineStart();
 
 	// Return hit for first physics body hit
-	FHitResult GetFirstPhysicsBodyInReach() const;
+	FHitResult GetFirstPhysicsBodyInReach();
 	
 };
