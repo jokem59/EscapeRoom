@@ -22,6 +22,9 @@ UOpenDoor::UOpenDoor()
 void UOpenDoor::BeginPlay()
 {
 	Super::BeginPlay();
+
+	if (!PressurePlate)
+		UE_LOG(LogTemp, Error, TEXT("%s missing pressure plate"), *GetOwner()->GetName())
 }
 
 void UOpenDoor::OpenDoor()
@@ -57,6 +60,7 @@ float UOpenDoor::GetTotalMassOfActorsOnPlate()
 {
 	float TotalMass = 0.f;
 	TArray<AActor*> OverlappingActors;
+	if (!PressurePlate) { return TotalMass; }
 	// Find all overlapping actors
 	PressurePlate->GetOverlappingActors(OUT OverlappingActors);
 	// Iterate through them adding their masses
